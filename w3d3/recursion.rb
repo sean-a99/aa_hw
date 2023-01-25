@@ -57,9 +57,22 @@ def reverse(str)
   str[-1] + reverse(str[0..-2])
 end
 
-puts reverse("house") # => "esuoh"
-puts reverse("dog") # => "god"
-puts reverse("atom") # => "mota"
-puts reverse("q") # => "q"
-puts reverse("id") # => "di"
-p reverse("") # => ""
+# puts reverse("house") # => "esuoh"
+# puts reverse("dog") # => "god"
+# puts reverse("atom") # => "mota"
+# puts reverse("q") # => "q"
+# puts reverse("id") # => "di"
+# p reverse("") # => ""
+
+
+def fast_all_fibs(n)
+  return [0, 1].take(n) if n <= 2
+  prev_arr = fast_all_fibs(n - 1)
+  prev_arr << prev_arr[-1] + prev_arr[-2]
+end
+
+p fast_all_fibs(1)
+p fast_all_fibs(3)
+p fast_all_fibs(6)
+p fast_all_fibs(10)
+p fast_all_fibs(20)
