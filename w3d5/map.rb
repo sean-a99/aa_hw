@@ -35,7 +35,7 @@ class Map
   end
 
   def show
-    print @data
+    print @data.dup
   end
 
 
